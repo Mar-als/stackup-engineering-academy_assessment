@@ -6,6 +6,7 @@ pandas>=2.0.0
 numpy>=1.24.0
 
 # Big data
+pyspark>=3.5.0        # Required for Task 3.1 — was missing from this file
 
 # Streaming
 kafka-python>=2.0.2

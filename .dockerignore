@@ -1,0 +1,18 @@
+# StackUp Engineering Academy — Data Engineering Assessment
+# Pillar 4, Task 4.1
+
+outputs/
+.git/
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Not needed by the ETL image — keeps build context small
+datasets/events_stream/
+docs/
+starter_files/
+tasks/
+.idea/
+.vscode/
+*.log
