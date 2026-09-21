@@ -1,0 +1,16 @@
+Presight ETL Pipeline — Run Summary
+==================================================
+Run timestamp: 2026-09-16T14:34:29
+Pipeline execution time: 0.38 seconds
+
+Row counts
+--------------------------------------------------
+transactions         before:   50000   after:   50000
+projects (reference) before:     500   after:     500
+employees (reference) before:    1000   after:    1000
+
+Data quality decisions
+--------------------------------------------------
+- transactions.amount: ~740 nulls kept as NaN in the raw column; amount_aed zero-fills them so aggregates don't break, while the raw amount column still reflects 'unknown', not 'zero-cost'.
+- transactions.approved_by: ~2,444 nulls kept as-is (no invented approver); is_approved=False flags these for finance review instead of silently attributing them to someone.
+- project/employee merges are left joins on verified-unique keys, so the merge cannot duplicate transaction rows (asserted in code).

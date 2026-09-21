@@ -1,0 +1,32 @@
+Presight ETL Pipeline — DAG Run Report
+==================================================
+DAG run date: 2026-09-17T06:00:00+04:00
+
+Row counts (raw -> clean)
+--------------------------------------------------
+projects:         500 ->     500
+employees:       1000 ->    1000
+transactions:   50000 ->   50000
+
+Data quality gate results
+--------------------------------------------------
+{
+  "projects": {
+    "checks_passed": 5,
+    "checks_failed": 2
+  },
+  "employees": {
+    "checks_passed": 3,
+    "checks_failed": 4
+  },
+  "transactions": {
+    "checks_passed": 5,
+    "checks_failed": 4
+  }
+}
+
+Files written
+--------------------------------------------------
+  outputs/projects_clean.csv
+  outputs/employees_clean.csv
+  outputs/transactions_clean.csv
